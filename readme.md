@@ -16,8 +16,8 @@ Make sure you have the following installed on your machine:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/book-review-api.git
-   cd book-review-api
+   git https://github.com/nikhilhingwe/books-api.git
+   cd books-api
    ```
 
 2. **Install dependencies**
@@ -77,7 +77,7 @@ http://localhost:4000/api/v1
 
   ```json
   {
-    "email": "john@example.com",
+    "email": "nikgil@gmail.com",
     "password": "password123"
   }
   ```
