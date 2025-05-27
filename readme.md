@@ -1,6 +1,6 @@
 # 📚 Book Review
 
-A simple RESTful API for managing books and user reviews, built with **Node.js**, **Express**, and **MongoDB**.
+A simple Rest API for managing books and user reviews, built with **Node.js**, **Express**, and **MongoDB**.
 
 ## 🚀 Project Setup
 
