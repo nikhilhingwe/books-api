@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "f8f5dad0-d03f-4369-9ae6-c2c3863f7bc3",
+		"name": "Books Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16270102"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"nikhil\",\r\n  \"email\": \"nikhil@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/api/v1/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"nikhil@gmail.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/api/v1/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzU5M2Y4ZjI2MWFiMzVmZGVhODNmNyIsImlhdCI6MTc0ODM0MTc2NCwiZXhwIjoxNzQ4OTQ2NTY0fQ.GkaYryVDtofjmto_6ttfo5IBneFr1VOxe97TNup3ED0"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Great Gatsby 2\",\r\n  \"author\": \"F. Scott Fitzgerald\",\r\n  \"genre\": \"Classic\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/api/v1/books/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzU5M2Y4ZjI2MWFiMzVmZGVhODNmNyIsImlhdCI6MTc0ODM0MTc2NCwiZXhwIjoxNzQ4OTQ2NTY0fQ.GkaYryVDtofjmto_6ttfo5IBneFr1VOxe97TNup3ED0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"doe@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/books/get?page=1&limit=10&author=Scott&genre=Classic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"get"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "author",
+							"value": "Scott"
+						},
+						{
+							"key": "genre",
+							"value": "Classic"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add book review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzU5M2Y4ZjI2MWFiMzVmZGVhODNmNyIsImlhdCI6MTc0ODM0MTc2NCwiZXhwIjoxNzQ4OTQ2NTY0fQ.GkaYryVDtofjmto_6ttfo5IBneFr1VOxe97TNup3ED0"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rating\": 4,\r\n  \"comment\": \"very good book\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/api/v1/books/add-review/683595ca87b80e5fa7002b81"
+			},
+			"response": []
+		},
+		{
+			"name": "Update book review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzU5M2Y4ZjI2MWFiMzVmZGVhODNmNyIsImlhdCI6MTc0ODM0MTc2NCwiZXhwIjoxNzQ4OTQ2NTY0fQ.GkaYryVDtofjmto_6ttfo5IBneFr1VOxe97TNup3ED0"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rating\": 5,\r\n  \"comment\": \"book is very good\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/api/v1/books/update-review/6835996f2b5277e2dce86bec"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzU5M2Y4ZjI2MWFiMzVmZGVhODNmNyIsImlhdCI6MTc0ODM0MTc2NCwiZXhwIjoxNzQ4OTQ2NTY0fQ.GkaYryVDtofjmto_6ttfo5IBneFr1VOxe97TNup3ED0"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rating\": 5,\r\n  \"comment\": \"Amazing book updates!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/api/v1/books/delete-review/6835996f2b5277e2dce86bec"
+			},
+			"response": []
+		},
+		{
+			"name": "Search book",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzU5M2Y4ZjI2MWFiMzVmZGVhODNmNyIsImlhdCI6MTc0ODM0MTc2NCwiZXhwIjoxNzQ4OTQ2NTY0fQ.GkaYryVDtofjmto_6ttfo5IBneFr1VOxe97TNup3ED0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"rating\": 5,\r\n  \"comment\": \"Amazing book updates!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/books/search?query=Grea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Grea"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
